@@ -465,12 +465,6 @@ async function drawDealerCards(){
     
     isAllDelt = true;
     
-    //displays lowest message that compares against dealershand
-   
-    
-    //player
-   // counterAcesRow1 = -1;
-    
     multiplierRow1 = -1;
    
     dealerHandTotal = 0;
@@ -495,7 +489,7 @@ let initialXRow2 = 150;
 let counterAcesRow = -1;
 let numberOfIterationsRow2 = 0;
 let numberOfCardsDeltRow2 = 0;
-//let areBothDealsComplete = "noneAre";
+
 let isThereISecondDeal = false;
 let alternateHandForCharlieRow2 = 0;
 
@@ -609,14 +603,10 @@ function drawPlayerCardRow2(mark)
     
     ctx2.stroke();
     ctx2.font = "50px Arial";
-    //face cards
     
-    //console.log("isasplit", IsASplitFlag);
-
-
     if(IsASplitFlag)
     {
-        //playerScoreRow2 = playerScoreRow2 - 10;
+        
         alternateHandForCharlieRow2 = alternateHandForCharlieRow2 - 10;
         IsASplitFlag = false;
     }
@@ -684,12 +674,9 @@ function drawPlayerCardRow2(mark)
     if(tenCounter == 2)
     {   
         
-        //dealCardsBtn.disabled = false;
-        document.getElementById('split').style.visibility = 'visible';
-        //dealCardsBtn.disabled =  false;
-        //multiplierRow2--;
         
-        //gWasASplitFlag = true;
+        document.getElementById('split').style.visibility = 'visible';
+        
         tenCounter = 0;
     }
     else
@@ -703,7 +690,7 @@ function drawPlayerCardRow2(mark)
     //5 cards wins, alternatehandforcharlie is a count with aces counting 1 not 11.
     if(alternateHandForCharlieRow2 < 22 && numberOfCardsDeltRow2 == 6)
     {
-        //dealCardsBtn.disabled = true;
+        
         console.log("5 Card Charlie");
         pointsHave = pointsHave + (pointsWagered);
 
@@ -716,14 +703,12 @@ function drawPlayerCardRow2(mark)
         {
             text = `5 CARDS!  YOU WIN ${pointsWagered} POINT`;
         }
-        //let text2 = `Total Points: ${pointsHave}.`;
+        
         //top of two messages
         document.getElementById("messageUnderRow2").textContent = text;
         document.getElementById("scoreAtTop").textContent = pointsHave;
         FirstDealIsDoneFlag = true;
         
-        //dealCardsBtn.disabled = false;
-        //drawCardBtnUpper.disabled = true;
         checkEndOfHands();
         
     }
@@ -749,7 +734,7 @@ function drawPlayerCardRow2(mark)
         if(playerScoreRow2 > 21)
         {
                       
-                    //dealCardsBtn.disabled = true;
+                   
                     pointsHave = pointsHave - pointsWagered;
 
 
@@ -794,7 +779,7 @@ function drawPlayerCardRow2(mark)
         FirstDealIsDoneFlag = true;
         
          
-        //dealCardsBtn.disabled = false;
+        
         drawCardBtnUpper.disabled = true;
         
 
@@ -823,7 +808,6 @@ let initialXRow3 = 150;
 //let playerScoreRow3 = 0;
 let totalCardsDeltRow3 = 0;
 let numberOfIterationsRow3 = 0;
-
 //let counterAcesRow = 0;
 let numberOfCardsDeltRow3 = 0;
 let alternateHandForCharlieRow3 = 0;
@@ -831,7 +815,7 @@ let counterOfPressedLowerDrawBtn = 0;
 
 function setLowerMessages()
 {
-    //isThereASecondDeal
+   
 
 
 }
@@ -941,7 +925,7 @@ if(mark === 0){
         counterAcesRow = counterAcesRow + 1;
         playerScoreRow3 = playerScoreRow3 + 11;
         AreThereAcesArrayRow[counterAcesRow] = "is row3 ace";
-        //counterAcesRow++;
+        
         //value of hand with all aces counted as 1.
         alternateHandForCharlieRow3 = alternateHandForCharlieRow3 + 1;
     }
@@ -1250,16 +1234,12 @@ function onDoubleDownPress(){
     drawCardBtnLower.disabled =  false;
     
     isThereASecondDeal = true;
-    //for draeing both decks wgeb split button was pressed
+    //for drawing both decks wgeb split button was pressed
     drawPlayerCardRow3("10");
     IsDoubleDownRow2Flag = true;
     multiplierRow2--;
     ctx2.clearRect((initialXRow1 +  (1 * CARDGAP) - 1),0,1000,78);
     playerScoreRow2 = playerScoreRow2 - 10;
-    
-    //for testing
-    //playerScoreRow3 =  10;
-    //drawPlayerCardRow2("10");
     
 }
 
@@ -1274,10 +1254,6 @@ function newRound(){
  ctx1.clearRect(0,0,1000,78);
  ctx2.clearRect(0,0,1000,78);
  ctx3.clearRect(0,0,1000,78);
- 
- 
- //messageLower.disabled = true;
- //messageUnderRow2.disabled = true;
  
  newRoundBtn.disabled = true;
  
@@ -1298,9 +1274,7 @@ wagerButtonTwentyfive.disabled=false;
  isAllDelt = false;
  playerScoreRow2 = 0;
  playerScoreRow3 = 0;
-//four aces, times 5 decks
- 
- //pointsHave = 30;
+
  pointsWagered = 0;
  
  turnNoReset = 0;
@@ -1310,7 +1284,7 @@ wagerButtonTwentyfive.disabled=false;
  counterAcesRow = -1;
  numberOfIterationsRow2 = 0;
  numberOfCardsDeltRow2 = 0;
- //areBothDealsCompe = "noneAre";
+ 
  isThereASecondDeal = false;
 
  multiplierRow3 = -1;
@@ -1336,9 +1310,8 @@ wagerButtonTwentyfive.disabled=false;
  counterOfPressedDealerDrawBtn = 0;
  
 
- //AreThereAcesArrayRow = ["no ace","no ace","no ace","no ace" , "no ace","no ace","no ace","no ace" ,"no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace"]; 
-
- //clear aces in aray so next ahnd has no aces yet
+//AreThereAcesArrayRow = ["no ace","no ace","no ace","no ace" , "no ace","no ace","no ace","no ace" ,"no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace","no ace"]; 
+//clear aces in aray so next ahnd has no aces yet
 for(let i = 0 ; i < 4*5; i++)
 {
     if(AreThereAcesArrayRow[i] == "is row2 ace" || AreThereAcesArrayRow[i] == "is row3 ace")
@@ -1390,21 +1363,10 @@ function checkEndOfHands()
             
             
             
-                //drawCardBtnLower.disabled = false;
+               
                 drawCardBtnUpper.disabled = true;
                 drawCardBtnLower.disabled = false;
                 
-                /*
-                if(numberOfCardsDeltRow3 > 1)
-                {
-                dealCardsBtn.disabled = false;
-                }
-                else{
-                    dealCardsBtn.disabled = true;
-                }
-                */
-                
-                //alert("end1");
                 
         }
         
@@ -1418,20 +1380,6 @@ function checkEndOfHands()
                 //bottom button hidden
                 drawCardBtnLower.disabled = true;
                
-
-                /*
-                if(numberOfCardsDeltRow2 > 1)
-                {
-                dealCardsBtn.disabled = false;
-                }
-                else
-                {
-                    dealCardsBtn.disabled = true;
-
-                }
-                */
-               
-                //alert("end3");
                 
         }
         
@@ -1441,8 +1389,7 @@ function checkEndOfHands()
 
     else if(!isThereISecondDeal)
     {
-        //alert("end5");
-    
+        
     
         if (FirstDealIsDoneFlag == true)
         {
@@ -1450,8 +1397,6 @@ function checkEndOfHands()
             newRoundBtn.disabled = false;
             dealCardsBtn.disabled = true;
 
-            //alert("end2");
-            
         }
     }
 
