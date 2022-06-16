@@ -100,10 +100,12 @@ function dummy()
 
 
 //amt of space between cards 
-const CARDGAP = 70;
+const CARDGAPFORTEN = 66;
+const CARDGAPNOTFORTEN = 70;
+const CARDGAP = 60;
 //five decks
 const AMTOFCARDS = (52*4);
-
+const PAUSEBETWEENDEALERCARDS = 1000;
 
 //make these buttons vague
 document.getElementById('canvasPlayer2').style.visibility = 'hidden';
@@ -270,14 +272,14 @@ async function drawDealerCards(){
         //alignment for bigger card mark
         if(mark == "10"){
             //dras mark
-            ctx1.fillText(mark, initialXRow1 + multiplierRow1 * CARDGAP-4,  60 );
+            ctx1.fillText(mark, initialXRow1 + multiplierRow1 * CARDGAPFORTEN,  60 );
         }
         else{
-            ctx1.fillText(mark, initialXRow1 + multiplierRow1 * CARDGAP+10,  60 );
+            ctx1.fillText(mark, initialXRow1 + multiplierRow1 * CARDGAPNOTFORTEN,  60 );
         }
         newRoundBtn.disabled = true;
         //pauses after each card - uncomment to use
-        await new Promise(dummy => { setTimeout(dummy, 1000); });
+        await new Promise(dummy => { setTimeout(dummy,PAUSEBETWEENDEALERCARDS); });
         newRoundBtn.disabled = false;
 
     }
@@ -814,10 +816,10 @@ function drawPlayerCardRow2()
 
     //size of mark needs to be centerd on card
     if(mark == "10"){
-        ctx2.fillText(mark, initialXRow2 + multiplierRow2 * CARDGAP-4,  60 );
+        ctx2.fillText(mark, initialXRow2 + multiplierRow2 * CARDGAPFORTEN,  60 );
     }
     else{
-        ctx2.fillText(mark, initialXRow2 + multiplierRow2 * CARDGAP+10,  60 );
+        ctx2.fillText(mark, initialXRow2 + multiplierRow2 * CARDGAPNOTFORTEN,  60 );
     }
 
    
@@ -1104,10 +1106,10 @@ if(mark === "0"){
     
     //different fit on card when certain numbers
     if(mark == "10"){
-        ctx3.fillText(mark, initialXRow3 + multiplierRow3 * CARDGAP-4,  60 );
+        ctx3.fillText(mark, initialXRow3 + multiplierRow3 * CARDGAPFORTEN,  60 );
     }
     else{
-        ctx3.fillText(mark, initialXRow3 + multiplierRow3 * CARDGAP+10,  60 );
+        ctx3.fillText(mark, initialXRow3 + multiplierRow3 * CARDGAPNOTFORTEN,  60 );
     }
 
 }
