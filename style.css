@@ -6,17 +6,17 @@ body {
     margin-bottom: 0;
 }
 #container {
-    background-color: whitesmoke;
-    display: block;
-    max-height: 540px;
     border: 2px solid rgb(0, 0, 0);
     height: 85%;
     width: 50%;
     text-align: center;
     border-radius: 4em;
     box-shadow: 10px 20px 30px rgba(0, 0, 0, .6);
+    max-height: 900px;
 }
 #forFlex {
+    /*most outer container*/
+    /*border: 10px solid rgb(150, 210, 19);*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,9 +30,14 @@ body {
 }
 #title {
     font-size: 30px;
-    margin-left: 119px;
-    margin-bottom: 15px;
-    margin-top: 22px;
+    margin-left: 150px;
+    margin-bottom: 23px;
+
+    margin-top: 17px;
+}
+#scoreHere {
+    font-size: 60px;
+    color: red;
 }
 #scoreAtTop {
     width: 50%;
@@ -40,6 +45,9 @@ body {
     color: rgb(255, 72, 0);
     align-self: center;
 }
+#containsUpperButtons {}
+/*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Courier, monospace, Times, serif;!-->/
+*/
 #messageLower {
     font-weight: normal;
     margin-bottom: 0;
@@ -49,6 +57,8 @@ body {
 }
 /* for small mobile screen*/
 #alternateContainer {
+    border: 10px solid rgb(0, 0, 0);
+    background-color: whitesmoke;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -60,10 +70,18 @@ body {
     margin-bottom: 10px;
     margin-bottom: 10px;
 }
+#bottomCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 /*mobile*/
-@media screen and (max-height: 607px) {
+@media screen and (max-height: 554px) {
     #container {
         display: none;
+    }
+    #alternateContainer {
+        display: flex;
     }
     #forFlex {
         display: none;
@@ -73,9 +91,28 @@ body {
     }
 }
 /*upper box*/
-@media screen and (max-height: 2300px) and (min-height: 608px) {
+@media screen and (max-height: 955px) and (min-height: 555px) {
     #alternateContainer {
         display: none;
+    }
+    #container {
+        display: block;
+        border: 2px solid rgb(0, 0, 0);
+        max-height: 600px;
+    }
+}
+@media screen and (max-height: 2300px) and (min-height: 956px) {
+    /*#containerLargeDisplay{display: block;}*/
+    #alternateContainer {
+        display: none;
+    }
+    #item {
+        display: none;
+    }
+    #container {
+        border: 2px solid rgb(0, 0, 0);
+        box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.6);
+        max-height: 600px;
     }
 }
 @media screen and (max-width: 1139px) {
